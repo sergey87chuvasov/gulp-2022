@@ -1,7 +1,8 @@
-import fileInclude from "gulp-file-include"
+import fileinclude from "gulp-file-include"
 
 export const html = () => {
     return app.gulp.src(app.path.src.html)
-        .pipe(fileInclude())
+        .pipe(fileinclude())
+        .pipe(app.plugins.replace(/@img\//g, 'img/'))
         .pipe(app.gulp.dest(app.path.build.html))
 }
