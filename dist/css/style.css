@@ -1,5 +1,5 @@
 .no-webp body {
-  background: url("../img/picture.jpg") 0 0 no-repeat; }
+  background: url("../img/cover.jpg") 0 0 no-repeat; }
 
 body {
   background-color: rgb(106, 48, 48);
@@ -15,4 +15,4 @@ body span {
   }
 }
 
-.webp body { background: url(../img/picture.webp) 0 0 no-repeat; }
+.webp body { background: url(../img/cover.webp) 0 0 no-repeat; }
