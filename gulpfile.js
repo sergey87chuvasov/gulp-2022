@@ -26,6 +26,7 @@ import { js } from './gulp/tasks/js.js';
 import { images } from './gulp/tasks/images.js';
 import { otfToTtf, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
 import { svgSprite } from "./gulp/tasks/svgSprite.js"
+import { zip } from "./gulp/tasks/zip.js"
 
 // file change watcher
 function watcher() {
@@ -47,11 +48,13 @@ const mainTasks = gulp.series(
 
 // building scenarios for executing tasks
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
-const build = gulp.series(reset, mainTasks)
+const build = gulp.series(reset, mainTasks);
+const deployZIP = gulp.series(reset, mainTasks, zip)
 
 // export scenaries 
 export { dev }
 export { build }
+export { deployZIP }
 
 // default script execution
 gulp.task('default', dev);
