@@ -25,16 +25,18 @@ import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
 import { images } from './gulp/tasks/images.js';
 import { otfToTtf, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
-import { svgSprite } from "./gulp/tasks/svgSprite.js"
-import { zip } from "./gulp/tasks/zip.js"
+import { svgSprite } from "./gulp/tasks/svgSprite.js";
+import { zip } from "./gulp/tasks/zip.js";
+import { ftp } from "./gulp/tasks/ftp.js"
+
 
 // file change watcher
 function watcher() {
   gulp.watch(path.watch.files, copy);
-  gulp.watch(path.watch.html, html);
-  gulp.watch(path.watch.scss, scss);
-  gulp.watch(path.watch.js, js);
-  gulp.watch(path.watch.images, images);
+  gulp.watch(path.watch.html, html); // gulp.series(html, ftp) = html
+  gulp.watch(path.watch.scss, scss); // ---//---
+  gulp.watch(path.watch.js, js); // ---//---
+  gulp.watch(path.watch.images, images); //  ---//---
 }
 
 export { svgSprite }
@@ -49,12 +51,14 @@ const mainTasks = gulp.series(
 // building scenarios for executing tasks
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
-const deployZIP = gulp.series(reset, mainTasks, zip)
+const deployZIP = gulp.series(reset, mainTasks, zip);
+const deployFTP = gulp.series(reset, mainTasks, ftp);
 
 // export scenaries 
 export { dev }
 export { build }
 export { deployZIP }
+export { deployFTP }
 
 // default script execution
 gulp.task('default', dev);
