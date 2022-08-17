@@ -1,5 +1,5 @@
 import {deleteAsync} from 'del';
 
 export const reset = () => {
-    return deleteAsync(['dist'])
+    return deleteAsync(app.path.clean)
 }

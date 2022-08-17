@@ -1,1 +1,29 @@
-@font-face{font-family:Roboto;font-display:swap;src:url(../fonts/Roboto-Bold.woff2) format("woff2"),url(../fonts/Roboto-Bold.woff) format("woff");font-weight:700;font-style:normal}@font-face{font-family:Roboto;font-display:swap;src:url(../fonts/Roboto-LightItalic.woff2) format("woff2"),url(../fonts/Roboto-LightItalic.woff) format("woff");font-weight:400;font-style:normal}@font-face{font-family:Roboto;font-display:swap;src:url(../fonts/Roboto-Regular.woff2) format("woff2"),url(../fonts/Roboto-Regular.woff) format("woff");font-weight:400;font-style:normal}.no-webp body{background:url(../img/cover.jpg) 0 0 no-repeat}body{font-family:Roboto;background-color:#6a3030}body span{color:red}.webp body{background:url(../img/cover.webp) 0 0 no-repeat}
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url("../fonts/Roboto-LightItalic.woff2") format("woff2"), url("../fonts/Roboto-LightItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: Roboto;
+  background-color: rgb(106, 48, 48);
+  background: url("../img/cover.jpg") 0 0 no-repeat;
+}
+body span {
+  color: red;
+}
